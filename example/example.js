@@ -1,23 +1,27 @@
-// Copyright 2014 Technical Machine, Inc. See the COPYRIGHT
-// file at the top-level directory of this distribution.
-//
-// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
-// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
-// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
-// option. This file may not be copied, modified, or distributed
-// except according to those terms.
+// const parser = require('ble-advertise');
+const parser = require('../index');
+const serializer = require('../index');
 
-var parser = require('../');
+const payload = '0201060303BEFE0AFF010B020026AC4DA393020A080E094C452D72657365727665645F43';
+// const payload = Buffer.from([
+//   2,   1,   6,   3,   3,
+// 190, 254,  10, 255,   1,
+//  11,   2,   0,  38, 172,
+//  77, 163, 147,   2,  10,
+//   8,  14,   9,  76,  69,
+//  45, 114, 101, 115, 101,
+// 114, 118, 101, 100,  95,
+//  67
+// ]);
+const packats = parser.parse(payload);
+console.log(packats);
 
-var payload = new Buffer([21, 2, 1, 6, 17, 7, 102, 154, 12, 32, 0, 8, 31, 152, 227, 17, 197, 108, 160, 199, 200, 8]);
-
-// Parse (little-endian by default)
-var packets = parser.parse(payload);
+// console.log(Buffer.from(hexStringToArray('010b020026ac4da393')).toString('utf-8'));
 
 
-console.log(packets.length); // 3
-console.log(packets[0].type); // Flags
-console.log(packets[0].data); //  [ 'LE General Discoverable Mode', 'BR/EDR Not Supported' ]
-
-console.log(packets[1].type); // 'Incomplete List of 128-bit Service Class UUIDs'
-console.log(packets[1].data); // [ '0xadab58386e7d4601bda2bffaa68956ba' ]
+const packats2 = {
+	flags : [0x02, 0x04],
+	incompleteUUID16 : ['2A00','2A01'],
+	completeName : 'My Device'
+};
+console.log(parser.serialize(packats2));

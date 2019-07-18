@@ -1,22 +1,19 @@
-// Copyright 2014 Technical Machine, Inc. See the COPYRIGHT
-// file at the top-level directory of this distribution.
-//
-// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
-// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
-// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
-// option. This file may not be copied, modified, or distributed
-// except according to those terms.
+const expect = require('chai').expect;
 
-var expect = require('chai').expect;
-var parser = require('../');
+const parser = require('../lib/parser');
 
 describe("Parser", function() {
 
-  var testPayload = new Buffer([27, 2, 1, 6, 17, 6, 186, 86, 137, 166, 250, 191, 162, 189, 1, 70, 125, 110, 56, 88, 171, 173, 5, 22, 10, 24, 7, 4]);
+  const testPayload = Buffer.from([
+    2, 1, 6,
+    17, 6, 186, 86, 137, 166, 250, 191, 162, 189, 1, 70, 125, 110, 56, 88, 171, 173, 
+    5, 22, 10, 24, 7, 4,
+    0, 0, 0, 0
+  ]);
 
   describe("#split()", function() {
     it("should split up an advertisement packet into distinct data formats", function() {
-      expect(parser.split(testPayload).length).to.equal(3);
+      expect(parser._split(testPayload).length).to.equal(3);
     });
   });
 

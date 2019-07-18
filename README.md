@@ -19,20 +19,22 @@ const parser = require('ble-advertise');
 
 // Payload from your BLE device (make it into a buffer, if not already)
 
-const payload = Buffer.from([
-    2,   1,   6,   3,   3,
-  190, 254,  10, 255,   1,
-   11,   2,   0,  38, 172,
-   77, 163, 147,   2,  10,
-    8,  14,   9,  76,  69,
-   45, 114, 101, 115, 101,
-  114, 118, 101, 100,  95,
-   67
-]);
+const payload = '0201060303BEFE0AFF010B020026AC4DA393020A080E094C452D72657365727665645F43';
+// const payload = Buffer.from([
+//   2,   1,   6,   3,   3,
+// 190, 254,  10, 255,   1,
+//  11,   2,   0,  38, 172,
+//  77, 163, 147,   2,  10,
+//   8,  14,   9,  76,  69,
+//  45, 114, 101, 115, 101,
+// 114, 118, 101, 100,  95,
+//  67
+// ]);
 
 // Parse (big-endian by default)
 const packets = parser.parse(payload);
 
+console.log(packats);
 console.log(packets.length); // 5
 console.log(packets[0].type); // Flags
 console.log(packets[0].data); // [ 'LE General Discoverable Mode', 'BR/EDR Not Supported' ]

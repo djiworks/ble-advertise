@@ -1,21 +1,12 @@
-// Copyright 2014 Technical Machine, Inc. See the COPYRIGHT
-// file at the top-level directory of this distribution.
-//
-// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
-// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
-// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
-// option. This file may not be copied, modified, or distributed
-// except according to those terms.
+const expect = require('chai').expect;
 
-var expect = require('chai').expect;
-var packet = require('../lib/packet');
-var Packet = packet.Packet;
-var toOctetStringArray = packet.toOctetStringArray;
+const Packet = require('../lib/packet').Packet;
+const toOctetStringArray = require('../lib/types')._toOctetStringArray;
 
 describe("Packet", function() {
   describe("#new Packet()", function() {
 
-    var types = [0x1, 0x5, 0xa, 0x1f, 0x21, 0x3d];
+    const types = [0x1, 0x5, 0xa, 0x1f, 0x21, 0x3d];
 
     it("should create a new packet with the correct data type", function() {
       expect(new Packet(types[0]).type).to.equal("Flags");
