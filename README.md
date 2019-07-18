@@ -46,7 +46,7 @@ console.log(packets[1].data); // [ 'febe' ]
 
 The returned packets in the packet array have the following structure:
 
-*packet*._type -> the type flag parsed from packet
+*packet*._type -> The type flag parsed from packet
 
 *packet*._byteOrder -> The byte order in parsing
 
