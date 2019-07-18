@@ -1,13 +1,22 @@
 {
-  "name" : "ble-advertise",
-  "description" : "Parse and generate Bluetooth Low Energy peripheral advertising packets",
+  "name": "ble-advertise",
+  "description": "Parse and generate Bluetooth Low Energy peripheral advertising packets",
   "version": "1.0.0",
-  "keywords" : ["bluetooth", "ble", "packet", "advertise", "parse", "generate"],
-  "main" : "index.js",
-  "files": ["lib"],
+  "keywords": [
+    "bluetooth",
+    "ble",
+    "packet",
+    "advertise",
+    "parse",
+    "generate"
+  ],
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
   "directories": {
     "lib": "libraries",
-    "test" : "Testing"
+    "test": "Testing"
   },
   "repository": {
     "type": "git",
