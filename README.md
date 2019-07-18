@@ -62,7 +62,7 @@ You can specify the endianess that you want the buffers parsed with by using the
 
 ```.js
 parser.parseLE(payload);
-parse.parseBE(payload);
+parser.parseBE(payload);
 ```
 
 ### Building Packets
