@@ -1,5 +1,5 @@
 {
-  "name": "ble-advertise",
+  "name": "@danke77/ble-advertise",
   "description": "Parse and generate Bluetooth Low Energy peripheral advertising packets",
   "version": "1.0.0",
   "keywords": [
