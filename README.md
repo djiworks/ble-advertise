@@ -9,7 +9,7 @@ This package can parse BLE slave advertisement packets into human readable/manip
 ## Install
 
 ```
-npm install ble-advertise
+npm i @danke77/ble-advertise
 ```
 
 ## Usage
