@@ -16,8 +16,6 @@ const payload = '0201060303BEFE0AFF010B020026AC4DA393020A080E094C452D72657365727
 const packats = parser.parse(payload);
 console.log(packats);
 
-// console.log(Buffer.from(hexStringToArray('010b020026ac4da393')).toString('utf-8'));
-
 
 const packats2 = {
 	flags : [0x02, 0x04],
