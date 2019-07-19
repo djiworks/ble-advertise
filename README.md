@@ -1,5 +1,7 @@
 # ble-advertise
 
+forked from <https://github.com/tessel/bleadvertise>
+
 ## Description
 
 This package can parse BLE slave advertisement packets into human readable/manipulatable objects and build advertisement packets from JSON objects. Based off of the BLE specification [data types](https://www.bluetooth.com/specifications/assigned-numbers/generic-access-profile).
@@ -7,7 +9,7 @@ This package can parse BLE slave advertisement packets into human readable/manip
 ## Install
 
 ```
-npm install ble-advertise
+npm i @danke77/ble-advertise
 ```
 
 ## Usage
@@ -46,7 +48,7 @@ console.log(packets[1].data); // [ 'febe' ]
 
 The returned packets in the packet array have the following structure:
 
-*packet*._type -> the type flag parsed from packet
+*packet*._type -> The type flag parsed from packet
 
 *packet*._byteOrder -> The byte order in parsing
 
