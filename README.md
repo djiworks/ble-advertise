@@ -8,7 +8,7 @@ This package can parse BLE slave advertisement packets into human readable/manip
 
 ## Install
 
-```
+```.bash
 npm i @danke77/ble-advertise
 ```
 
@@ -17,7 +17,7 @@ npm i @danke77/ble-advertise
 ### Packet Parsing
 
 ```.js
-const parser = require('ble-advertise');
+const parser = require('@danke77/ble-advertise');
 
 // Payload from your BLE device (make it into a buffer, if not already)
 
@@ -70,13 +70,13 @@ parser.parseBE(payload);
 ### Building Packets
 
 ```.js
-const serializer = require('ble-advertise');
+const serializer = require('@danke77/ble-advertise');
 
 // Create your advertisement packet
 const packet = {
-	flags : [0x02, 0x04],
-	incompleteUUID16 : ['2A00','2A01'],
-	completeName : 'My Device'
+  flags : [0x02, 0x04],
+  incompleteUUID16 : ['2A00','2A01'],
+  completeName : 'My Device'
 };
 
 // Serialize it into a Buffer
