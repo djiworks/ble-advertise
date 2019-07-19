@@ -56,7 +56,7 @@ The returned packets in the packet array have the following structure:
 
 *packet*.data -> The data parsed into appropriate data type (eg. String, Array of Octet Strings, unsigned int, etc.)
 
-### Endianness
+### Endianess
 
 You can specify the endianess that you want the buffers parsed with by using these functions:
 
